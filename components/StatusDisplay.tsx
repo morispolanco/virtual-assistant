@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { Status } from '../types';
 
@@ -13,12 +12,6 @@ const StatusIcon: React.FC<{status: Status}> = ({ status }) => {
     case 'capturing':
       return (
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
-      );
-    case 'listening':
-      return (
-        <svg className="w-8 h-8 text-red-500 animate-pulse" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-        </svg>
       );
     case 'speaking':
        return (
@@ -41,9 +34,8 @@ const StatusDisplay: React.FC<StatusDisplayProps> = ({ status, message }) => {
   const statusMessages: Record<Status, string> = {
     idle: "",
     initializing: "Iniciando cámara...",
-    ready: "Listo. Elige una opción.",
+    ready: "Listo. Presiona el botón para describir.",
     capturing: "Capturando imagen...",
-    listening: "Escuchando...",
     processing: "Procesando...",
     speaking: "Hablando...",
     error: "Error",
